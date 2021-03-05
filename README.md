@@ -61,6 +61,8 @@ client.on("message", async (message) => {
   const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
  if(hasLeveledUp) {
 		
+		const user = await Levels.fetch(message.author.id, message.guild.id);
+		
 		const levelEmbed = new Discord.MessageEmbed()
 		.setTitle('New Level!')
 		.setDescription(`**GG** ${message.author}, you just leveled up to level **${user.level + 1}**!\n🥳`)
