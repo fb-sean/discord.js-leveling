@@ -59,10 +59,15 @@ client.on("message", async (message) => {
   
   const randomAmountOfXp = Math.floor(Math.random() * 29) + 1; // Min 1, Max 30
   const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
-  if (hasLeveledUp) {
-    const user = await Levels.fetch(message.author.id, message.guild.id);
-    message.channel.send(`${message.author}, congratulations! You have leveled up to **${user.level}**. :tada:`);
-  }
+ if(hasLeveledUp) {
+		
+		const levelEmbed = new Discord.MessageEmbed()
+		.setTitle('New Level!')
+		.setDescription(`**GG** ${message.author}, you just leveled up to level **${user.level + 1}**!\n🥳`)
+
+		const sendEmbed = await message.channel.send(levelEmbed)
+		sendEmbed.react('🥳')
+	}
 });
 ```
 - **Rank Command**
