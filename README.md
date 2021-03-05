@@ -1,6 +1,6 @@
 #I DO NOT OWN ANY OF THE CODE, I MODIFIED IT SO THAT ITS NOT AS LAGGY
 
-# Better-Discord-Xp
+# Better-Leveling-System
 - A lightweight and easy to use xp framework for discord bots, uses MongoDB.
 
 # Download & Update
